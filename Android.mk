@@ -22,9 +22,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter jflte,$(TARGET_DEVICE)),)
-
-$(error The jflte tree is now dead, please use a variant repo. Terminating the build because you really REALLY don't want to flash a jflte build, even if it does compile.)
+ifneq ($(filter jactivelte jflte,$(TARGET_DEVICE)),)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
